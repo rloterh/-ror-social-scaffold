@@ -4,7 +4,14 @@ class FriendshipsController < ApplicationController
   # GET /friendships
   # GET /friendships.json
   def index
-    @friendships = Friendship.all
+    if user_signed_in?
+      @friend_requests = current_user.friend_requests
+      @pending_friends = current_user.pending_friends
+      @friends = current_user.friends
+    else
+      redirect_to root_path
+    end
+    @friend = User.where('id=?', :friend_id)
   end
 
   # GET /friendships/1
@@ -24,51 +31,36 @@ class FriendshipsController < ApplicationController
   # POST /friendships
   # POST /friendships.json
   def create
-    @friendship = Friendship.new(friendship_params)
-
-    respond_to do |format|
-      if @friendship.save
-        format.html { redirect_to @friendship, notice: 'Friendship was successfully created.' }
-        format.json { render :show, status: :created, location: @friendship }
-      else
-        format.html { render :new }
-        format.json { render json: @friendship.errors, status: :unprocessable_entity }
-      end
-    end
+    @friendship = Friendship.create(friendship_params)
+    redirect_to users_path
   end
 
   # PATCH/PUT /friendships/1
   # PATCH/PUT /friendships/1.json
   def update
-    respond_to do |format|
-      if @friendship.update(friendship_params)
-        format.html { redirect_to @friendship, notice: 'Friendship was successfully updated.' }
-        format.json { render :show, status: :ok, location: @friendship }
-      else
-        format.html { render :edit }
-        format.json { render json: @friendship.errors, status: :unprocessable_entity }
-      end
+    friendship = current_user.inverse_friendships.find_by(user_id: params[:friend_id])
+    friendship.status = true
+    if friendship.save
+      Friendship.create(user_id: current_user.id, friend_id: params[:friend_id], status: true)
+      redirect_to friendships_path
     end
   end
 
   # DELETE /friendships/1
   # DELETE /friendships/1.json
   def destroy
-    @friendship.destroy
-    respond_to do |format|
-      format.html { redirect_to friendships_url, notice: 'Friendship was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    friendship = current_user.inverse_friendships.find_by(user_id: params[:friend_id])
+    redirect_to friendships_path if friendship.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_friendship
-      @friendship = Friendship.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_friendship
+    @friendship = Friendship.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def friendship_params
-      params.require(:friendship).permit(:user_id, :friend_id, :status)
-    end
+  # Only allow a list of trusted parameters through.
+  def friendship_params
+    params.require(:friendship).permit(:user_id, :friend_id, :status)
+  end
 end
