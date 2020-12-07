@@ -1,6 +1,4 @@
 class FriendshipsController < ApplicationController
-  before_action :set_friendship, only: [:show, :edit, :update, :destroy]
-
   # GET /friendships
   # GET /friendships.json
   def index
