@@ -1,7 +1,7 @@
 <%= form_with(model: friendship, local: true) do |form| %>
   <% if friendship.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(friendship.errors.count, "error") %> prohibited this friendship from being saved:</h2>
+      <h2><%= pluralize(friendship.errors.count, "error") %> Save Error:</h2>
 
       <ul>
       <% friendship.errors.full_messages.each do |message| %>
@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="f_field">
     <%= form.label :user_id %>
     <%= form.text_field :user_id %>
   </div>
 
-  <div class="field">
+  <div class="f_field">
     <%= form.label :friend_id %>
     <%= form.text_field :friend_id %>
   </div>
 
-  <div class="field">
+  <div class="f_field">
     <%= form.label :status %>
     <%= form.check_box :status %>
   </div>

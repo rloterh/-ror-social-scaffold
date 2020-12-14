@@ -1,31 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="friendships">
 
-<h1>Friendships</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Friend</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @friendships.each do |friendship| %>
-      <tr>
-        <td><%= friendship.user %></td>
-        <td><%= friendship.friend %></td>
-        <td><%= friendship.status %></td>
-        <td><%= link_to 'Show', friendship %></td>
-        <td><%= link_to 'Edit', edit_friendship_path(friendship) %></td>
-        <td><%= link_to 'Destroy', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <div id="friend_requests">
+  <h3> Friends Requests </h3>
+    <% @friend_requests.each do |friend| %>
+      <h4><%= link_to friend.name, user_path(friend), class: 'listed-users' %></h4>
+      <%= link_to 'Accept Request', 
+      friendships_update_path(user_id: current_user.id, friend_id: friend.id), class: 'accept-request'  %>
+      <%= link_to 'Decline Request',
+      friendships_destroy_path(user_id: current_user.id, friend_id: friend.id), class: 'decline-request' %>
+      <hr class="pending-fr-lp-hr">
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+  <div id="pending_friends"> 
+    <h3 class="header-top"> Sent Reqeusts (pending) </h3>
+    <% @pending_friends.each do |friend| %>
+      <h4 class="pending-f-header"><%= link_to friend.name, user_path(friend) %></h4>
+      <hr class="pending-fr-lp-hr">
+    <% end %>
+  </div>
 
-<%= link_to 'New Friendship', new_friendship_path %>
+  <div id="friend_list">
+    <h3 class="header-top">My Friends</h3>
+    <% @friends.each do |friend| %>
+      <h4><%= link_to friend.name, user_path(friend) %></h4>
+    <% end %>
+  </div>
+</div>
