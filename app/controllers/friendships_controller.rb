@@ -1,6 +1,4 @@
 class FriendshipsController < ApplicationController
-  # GET /friendships
-  # GET /friendships.json
   def index
     if user_signed_in?
       @friend_requests = current_user.friend_requests
