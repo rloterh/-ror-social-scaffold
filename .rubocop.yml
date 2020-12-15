@@ -65,3 +65,5 @@ Style/GuardClause:
   Enabled: false
 Lint/Void:
   Enabled: false
+Metrics/BlockLength:
+  Enabled: false
