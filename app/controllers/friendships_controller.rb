@@ -34,9 +34,6 @@ class FriendshipsController < ApplicationController
   end
 
   private
-  def set_friendship
-    @friendship = Friendship.find(params[:id])
-  end
 
   def friendship_params
     params.require(:friendship).permit(:user_id, :friend_id, :status)
