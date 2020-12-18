@@ -7,7 +7,7 @@
 - Ruby v2.7.2
 - Ruby on Rails v5.2.4
 
-## Live Demo
+## Live Demo 
 
 TBA
 
