@@ -18,6 +18,8 @@ body {
   position: relative;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  margin: 0;
+  padding-top: 100px;
 }
 
 h1,
@@ -31,7 +33,7 @@ h3 {
 h3 {
   padding: 10px;
   background-color: #c5e1a5;
-  max-width: 50%;
+  // max-width: 50%;
 }
 
 ul {
@@ -62,6 +64,11 @@ h4 a {
   background-color: $primary-color-dark;
   color: $primary-color-light;
 
+  position: fixed;
+top: 0;
+width: 100%;
+
+
   a {
     color: $primary-color-light;
     text-transform: capitalize;
@@ -87,9 +94,16 @@ h4 a {
   }
 }
 
+// .sticky {
+//   position: fixed;
+//   top: 0;
+//   width: 100%;
+// }
+
 .main.main {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .main > h2 {
@@ -169,7 +183,7 @@ form input[type="submit"] {
 }
 
 form {
-  width: 80%;
+  // width: 100%;
   margin: 8px 0;
 
   .f_field {
@@ -299,6 +313,18 @@ form {
   width: 100%;
   margin: 10px;
 
+  .users-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .user-list-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .users-list li {
     margin-bottom: 16px;
     text-transform: capitalize;
@@ -355,7 +381,7 @@ form {
 
 .pending-fr-lp-hr,
 .all-users-hr {
-  max-width: 28%;
+  // max-width: 28%;
   margin: 10px 0 10px;
   background-color: #689f38;
   border: none;
@@ -364,7 +390,7 @@ form {
 }
 
 .bg-pending-r {
-  padding: 6px 12px;
+  padding: 12px 12px 6px;
   background-color: #b2ff59;
   border: solid 1px #8bc34a;
   color: #000;
@@ -388,8 +414,9 @@ form {
 }
 
 .listed-users {
-  padding: 5px 0 5px;
+  padding: 5px 0;
   display: inline-block;
+
 }
 
 .devise-login {
@@ -424,7 +451,7 @@ input[value="Send Reqeust"] {
 
 @media only screen and (min-width: 480px) {
   form {
-    width: 60%;
+    // width: 60%;
   }
 
   .new_post,
@@ -465,7 +492,7 @@ form#new_user.new_user {
 
 @media (min-width: 780px) {
   form {
-    width: 40%;
+    // width: 40%;
   }
 
   .new_post,
