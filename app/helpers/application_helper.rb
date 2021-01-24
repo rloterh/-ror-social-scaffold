@@ -17,7 +17,8 @@ module ApplicationHelper
   end
 
   def make_friend(friend)
-    if !Friendship.exists?(user_id: current_user.id, friend_id: friend.id) && !Friendship.exists?(user_id: friend.id, friend_id: current_user.id)
+    if !Friendship.exists?(user_id: current_user.id,
+                           friend_id: friend.id) && !Friendship.exists?(user_id: friend.id, friend_id: current_user.id)
       render 'friendships/send_request', friend: friend
     elsif Friendship.exists?(user_id: current_user.id, friend_id: friend.id, status: false)
       render 'friendships/pending_notice'
