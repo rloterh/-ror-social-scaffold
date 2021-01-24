@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/microverse-007bff)
 
 ## Introduction
-Stay In Touch app is a social media app which has basic friendship functionality. A user can send friendship request to other users, and sent request can be accepted or declined. Only users who are friends with other users can view each others profile, read each others post, make comments on post or like the post. The initial basic code for this project was scaffold by Microverse.
+Stay In Touch app is a social media app which has basic friendship functionality. A user can send friendship request to other users, and sent request can be accepted or declined  by the users sent to. Users who have not yet accepted friendship requests are tagged 'Request is Pending' on the Users List page. On Friendships page users can view friends list and manage friendships. Only users who are friends with other users can view each others profile, read each others post, make comments on post or like the post. The initial basic code for this project was scaffold by Microverse.
 
 ## Live Demo Link
 [Stay In Touch Live demo](https://frozen-scrubland-11190.herokuapp.com/).
