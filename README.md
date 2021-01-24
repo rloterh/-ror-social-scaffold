@@ -1,5 +1,7 @@
 # Stay In Touch - RoR Social Media App (A Microverse Project)
 
+![](https://img.shields.io/badge/microverse-007bff)
+
 ## Introduction
 Stay In Touch app is a social media app which has basic friendship functionality. A user can send friendship request to other users, and sent request can be accepted or declined. Only users who are friends with other users can view each others profile, read each others post, make comments on post or like the post. The initial basic code for this project was scaffold by Microverse.
 
@@ -7,8 +9,8 @@ Stay In Touch app is a social media app which has basic friendship functionality
 [Stay In Touch Live demo](https://frozen-scrubland-11190.herokuapp.com/).
 
 For quick login to the demo app, us the following credential:
-Email: **_user10@m.com_**
-Password: **_user10123_**
+*Email:* **_user10@m.com_**
+*Password:* **_user10123_**
 
 
 ## App Screenshots
@@ -27,7 +29,7 @@ Password: **_user10123_**
 - Run the command **_rails db:create_** to create database
 - Run the command **_rails db:migrate_** to configure database schema
 - Run the command **_rails s_** to start the Rails server
-- In your browser, navigate to  **_http://localhost:3000**
+- In your browser, navigate to  **_http://localhost:3000_**
 
 
 ## Built Mainly With
