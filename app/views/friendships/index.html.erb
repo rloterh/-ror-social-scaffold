@@ -1,0 +1,29 @@
+<div class="friendships">
+
+  <div id="friend_requests">
+  <h3> Friends Requests </h3>
+    <% @friend_requests.each do |friend| %>
+      <h4><%= link_to friend.name, user_path(friend), class: 'listed-users' %></h4>
+      <%= link_to 'Accept Request', 
+      friendships_update_path(user_id: current_user.id, friend_id: friend.id), class: 'accept-request'  %>
+      <%= link_to 'Decline Request',
+      friendships_destroy_path(user_id: current_user.id, friend_id: friend.id), class: 'decline-request' %>
+      <hr class="pending-fr-lp-hr">
+    <% end %>
+  </div>
+
+  <div id="pending_friends"> 
+    <h3 class="header-top"> Sent Reqeusts (pending) </h3>
+    <% @pending_friends.each do |friend| %>
+      <h4 class="pending-f-header"><%= link_to friend.name, user_path(friend) %></h4>
+      <hr class="pending-fr-lp-hr">
+    <% end %>
+  </div>
+
+  <div id="friend_list">
+    <h3 class="header-top">My Friends</h3>
+    <% @friends.each do |friend| %>
+      <h4><%= link_to friend.name, user_path(friend) %></h4>
+    <% end %>
+  </div>
+</div>

@@ -24,6 +24,14 @@ h1,
 h2,
 h3 {
   font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  padding: 10px;
+  background-color: #c5e1a5;
+  max-width: 50%;
 }
 
 ul {
@@ -35,6 +43,18 @@ a {
   color: $primary-color-text;
 }
 
+.pending-f-header,
+h4 a {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main a {
+  display: inline-block;
+  max-width: 174px;
+  font-weight: 700;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -44,7 +64,7 @@ a {
 
   a {
     color: $primary-color-light;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 900;
   }
 
@@ -67,11 +87,13 @@ a {
   }
 }
 
-.main {
+.main.main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 16px;
+}
+
+.main > h2 {
+  text-align: center;
 }
 
 .notice,
@@ -136,11 +158,21 @@ a {
   }
 }
 
+form input[type="submit"] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: $primary-color-dark;
+  color: $primary-color-light;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+
 form {
   width: 80%;
   margin: 8px 0;
 
-  .field {
+  .f_field {
     width: 100%;
     padding: 8px 0;
 
@@ -157,25 +189,13 @@ form {
     }
 
     input[type="checkbox"] {
-      width: fit-content;
+      width: max-content;
     }
   }
 
   .actions {
     display: flex;
-    justify-content: center;
     margin: 8px 0;
-  }
-
-  input[type="submit"] {
-    padding: 8px;
-    width: 50%;
-    border: none;
-    border-radius: 4px;
-    background-color: $primary-color-dark;
-    color: $primary-color-light;
-    text-transform: uppercase;
-    font-weight: 900;
   }
 
   input[type="submit"]:hover {
@@ -305,6 +325,7 @@ form {
 
     h3 {
       width: 100%;
+      color: #689f38;
     }
 
     justify-content: start;
@@ -322,6 +343,85 @@ form {
   }
 }
 
+.friendships {
+  margin-left: 8px;
+}
+
+.pending-fr-hr {
+  max-width: 50%;
+  margin-top: 10px;
+  opacity: 0.4;
+}
+
+.pending-fr-lp-hr,
+.all-users-hr {
+  max-width: 28%;
+  margin: 10px 0 10px;
+  background-color: #689f38;
+  border: none;
+  height: 1px;
+  opacity: 0.4;
+}
+
+.bg-pending-r {
+  padding: 6px 12px;
+  background-color: #b2ff59;
+  border: solid 1px #8bc34a;
+  color: #000;
+  display: inline;
+}
+
+.accept-request {
+  padding: 6px;
+  margin: 5px;
+  background-color: #76ff03;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.decline-request {
+  padding: 6px;
+  margin: 5px;
+  background-color: #689f38;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.listed-users {
+  padding: 5px 0 5px;
+  display: inline-block;
+}
+
+.devise-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.devise-log {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+input[value="Sign up"] {
+  max-width: 174px;
+  display: inline-block;
+  margin-left: 0 !important;
+}
+
+input[value="Send Reqeust"] {
+  max-width: 174px;
+  display: inline-block;
+  margin-left: 0 !important;
+}
+
+.devise-signup {
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 0;
+}
+
 @media only screen and (min-width: 480px) {
   form {
     width: 60%;
@@ -333,6 +433,34 @@ form {
   .user-section {
     width: 70%;
   }
+}
+
+#logo {
+  display: inline-block;
+  font-size: 14px;
+  color: #dcedc8;
+  background-color: #008900;
+  text-shadow: 0 1px 2px #caeca2;
+  padding: 2px 8px;
+}
+
+#logo:hover {
+  font-size: 12px;
+  background: none;
+  border: 1px dashed #dcedc8;
+  border-radius: 2px;
+  padding: 1px 15px;
+}
+
+form#new_user.new_user {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field {
+  margin: 0 auto;
 }
 
 @media (min-width: 780px) {

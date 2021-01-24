@@ -6,6 +6,7 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "node_modules/**/*"
 
   DisplayCopNames: true
 
@@ -56,4 +57,14 @@ Style/HashEachMethods:
 Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
+  Enabled: false
+Layout/EndOfLine:
+  Enabled: false
+Layout/LineLength:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Lint/Void:
+  Enabled: false
+Metrics/BlockLength:
   Enabled: false

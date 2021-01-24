@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
@@ -15,6 +15,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+# Simple Form
+gem 'simple_form', '>= 5.0.3'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -33,7 +35,9 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'database_cleaner'
+# The RSpec testing framework
+gem 'rspec-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -46,6 +50,9 @@ end
 
 group :test do
   gem 'rspec'
+  # Capybara
+  gem 'capybara'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
@@ -53,7 +60,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'rubocop'
+  gem 'rubocop', '~>0.81.0'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end

@@ -15,4 +15,12 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+
+  def make_friend(friend)
+    if !Friendship.exists?(user_id: current_user.id, friend_id: friend.id) && !Friendship.exists?(user_id: friend.id, friend_id: current_user.id)
+      render 'friendships/send_request', friend: friend
+    elsif Friendship.exists?(user_id: current_user.id, friend_id: friend.id, status: false)
+      render 'friendships/pending_notice'
+    end
+  end
 end
