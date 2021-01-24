@@ -1,10 +1,11 @@
 AllCops:
   Exclude:
     - "db/**/*"
-    - "bin/*" 
+    - "bin/*"
     - "config/**/*"
     - "Guardfile"
     - "Rakefile"
+    - "node_modules/**/*"
     - "node_modules/**/*"
 
   DisplayCopNames: true
@@ -24,7 +25,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  ExcludedMethods: ['describe']
+  ExcludedMethods: ["describe"]
   Max: 30
 
 Style/Documentation:
@@ -57,9 +58,13 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-Metrics/BlockLength:
+Layout/EndOfLine:
+  Enabled: false
+Layout/LineLength:
+  Enabled: false
+Style/GuardClause:
   Enabled: false
 Lint/Void:
   Enabled: false
-Style/GuardClause:
+Metrics/BlockLength:
   Enabled: false
