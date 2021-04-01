@@ -1,8 +1,8 @@
+# Stay In Touch - RoR Social Media App (Microverse RoR Module)
+
 ![](https://img.shields.io/badge/microverse-007bff)
 
-# Stay In Touch - RoR Social Media App (A Microverse Project)
-
-## Introduction
+## Description
 Stay In Touch app is a social media app which has basic friendship functionality. A user can send friendship request to other users, and sent request can be accepted or declined  by the users sent to. Users who have not yet accepted friendship requests are tagged 'Request is Pending' on the Users List page. On Friendships page users can view friends list and manage friendships. Only users who are friends with other users can view each others profile, read each others post, make comments on post or like the post. The initial basic code for this project was scaffold by Microverse.
 
 ## Live Demo Link
@@ -40,11 +40,13 @@ For quick login to the demo app, us the following credential:
 
 
 ## Author
-👤 **Robert Loterh**
 
-- Github: [@githubhandle](https://github.com/rloterh)
-- Twitter: [@twitterhandle](https://twitter.com/RLoterh )
-- Linkedin: [linkedin](https://www.linkedin.com/in/robert-loterh)
+### 👨‍💻 Robert Loterh
+
+[![GitHub](https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/rloterh) <br>
+[![LINKEDIN](https://img.shields.io/badge/-LINKEDIN-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/robert-loterh/) <br>
+[![EMAIL](https://img.shields.io/badge/-EMAIL-D14836?style=for-the-badge&logo=Mail.Ru&logoColor=white)](mailto:rloterh@gmail.com) <br>
+[![TWITTER](https://img.shields.io/badge/-TWITTER-1DA1F2?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/RLoterh) <br>
 
 ## 🤝 Contributing
 
@@ -60,6 +62,6 @@ Give a ⭐️ if you like this project!
 
 - Project project and requirements created by [Microverse](https://www.microverse.org/)
 
-## 📝 License
+### License
 
-This project is [MIT](lic.url) licensed.
+![Cocoapods](https://img.shields.io/cocoapods/l/AFNetworking?color=red&style=for-the-badge)
